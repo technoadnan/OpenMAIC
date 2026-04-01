@@ -36,7 +36,6 @@ export async function POST(req: NextRequest) {
     // providerId is required from the client — no server-side store to fall back to
     const effectiveProviderId = providerId || ('unpdf' as PDFProviderId);
 
-<<<<<<< Updated upstream
     const config = {
       providerId: effectiveProviderId,
       apiKey: resolvePDFApiKey(effectiveProviderId, apiKey || undefined),
@@ -90,7 +89,6 @@ export async function POST(req: NextRequest) {
       baseUrl: clientBaseUrl
         ? clientBaseUrl
         : resolvePDFBaseUrl(effectiveProviderId, baseUrl || undefined),
->>>>>>> Stashed changes
     };
 
     // Convert PDF to buffer

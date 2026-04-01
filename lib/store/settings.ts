@@ -369,8 +369,6 @@ function ensureBuiltInProviders(state: Partial<SettingsState>): void {
   });
 }
 
-<<<<<<< Updated upstream
-=======
 /**
  * Ensure imageProvidersConfig includes all built-in image providers.
  * Called on every rehydrate so newly added image providers appear automatically.
@@ -421,7 +419,6 @@ function ensurePDFProviderConfigShape(state: Partial<SettingsState>): void {
   };
 }
 
->>>>>>> Stashed changes
 // Migrate from old localStorage format
 const migrateFromOldStorage = () => {
   if (typeof window === 'undefined') return null;
@@ -1134,13 +1131,10 @@ export const useSettingsStore = create<SettingsState>()(
       merge: (persistedState, currentState) => {
         const merged = { ...currentState, ...(persistedState as object) };
         ensureBuiltInProviders(merged as Partial<SettingsState>);
-<<<<<<< Updated upstream
-=======
         ensureBuiltInImageProviders(merged as Partial<SettingsState>);
         ensureBuiltInVideoProviders(merged as Partial<SettingsState>);
         ensurePDFProviderConfigShape(merged as Partial<SettingsState>);
         ensureValidProviderSelections(merged as Partial<SettingsState>);
->>>>>>> Stashed changes
         return merged as SettingsState;
       },
     },
